@@ -1,2 +1,2 @@
 # ACMCup
-ACM SigSpatial Cup 2016
+ACM SigSpatial GISCup 2016
