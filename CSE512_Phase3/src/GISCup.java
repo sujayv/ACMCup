@@ -143,9 +143,7 @@ public class GISCup implements Serializable{
 			System.out.println(date+"--"+latitude+"--"+longitude);
 			System.out.println("Value: "+value);
 			System.out.println("******************");
-			double final_latitude = latitude / 100.00;
-			double final_longitude = longitude / 100.00;
-			writer.print(final_latitude+","+(0-final_longitude)+","+date+","+value+"\n");
+			writer.print(latitude+","+(0-longitude)+","+date+","+value+"\n");
 		}
 		writer.close();
 		/*for(Tuple2<ArrayList<Integer>, Integer> temp : attribute_data.take(1000))
@@ -179,7 +177,7 @@ public class GISCup implements Serializable{
 				date = Integer.parseInt(row.get(0).split(" ")[0].split("-")[2]);
 				
 				//Longitude cell
-				longitude_conv =  Math.ceil ((Double.parseDouble(row.get(1)) * 100.0));
+				longitude_conv =  Math.floor ((Double.parseDouble(row.get(1)) * 100.0));
 				longitude_cell = Math.abs((int)longitude_conv);
 				
 				//Latitude cell
